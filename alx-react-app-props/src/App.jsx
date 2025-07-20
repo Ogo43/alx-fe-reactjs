@@ -9,6 +9,7 @@ import './App.css'
 
 function App() {
   const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
+  const user = {name: "Alice", age: "25", bio: "Loves hiking and photography"};
 
   return (
     <>
@@ -16,7 +17,9 @@ function App() {
       <Header />
       <MainContent />
       <Footer />
-      <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
+      <UserContext.Provider value={user}>
+        <UserProfile />
+      </UserContext.Provider>
       <UserContext.Provider value={userData}>
         <ProfilePage />
       </UserContext.Provider>
