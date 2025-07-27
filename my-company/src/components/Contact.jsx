@@ -45,6 +45,8 @@ const Contact = () => {
           type="text"
           name="name"
           placeholder="Your Name"
+          value={formData.name}
+          onChange={handleChange}
           required
           style={{
             width: "100%",
@@ -54,8 +56,6 @@ const Contact = () => {
             border: "1px solid #ccc",
             backgroundColor: "#bbc0c6ff",
           }}
-          value={formData.name}
-          onChange={handleChange}
         />
         <label
           htmlFor="email"
@@ -71,6 +71,8 @@ const Contact = () => {
           type="text"
           name="email"
           placeholder="Your Email"
+          value={formData.email}
+          onChange={handleChange}
           required
           style={{
             width: "100%",
@@ -80,8 +82,6 @@ const Contact = () => {
             border: "1px solid #ccc",
             backgroundColor: "#bbc0c6ff",
           }}
-          value={formData.email}
-          onChange={handleChange}
         />
         <label
           htmlFor="message"
@@ -96,6 +96,8 @@ const Contact = () => {
         <textarea
           name="message"
           placeholder="Your Message"
+          value={formData.message}
+          onChange={handleChange}
           required
           style={{
             width: "100%",
@@ -105,8 +107,6 @@ const Contact = () => {
             border: "1px solid #ccc",
             backgroundColor: "#bbc0c6ff",
           }}
-          value={formData.message}
-          onChange={handleChange}
         ></textarea>
         <button
           type="submit"
