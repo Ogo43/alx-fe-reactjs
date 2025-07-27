@@ -1,4 +1,3 @@
-// components/RecommendationsList.jsx
 import React, { useEffect } from 'react';
 import useRecipeStore from './recipeStore';
 
