@@ -21,7 +21,7 @@ const SearchForm = () => {
       const userData = await fetchUserData(input);
       setUser(userData);
     } catch (error) {
-      setError("Looks like we can't find the user");
+      setError("Looks like we cant find the user");
     } finally {
       setLoading(false);
     }
