@@ -34,14 +34,14 @@ const Search = () => {
   return (
     <div>
       <h1>GitHub User Search</h1>
-      <form onSubmit={handleSubmit} className="search-form">
+      <form onSubmit={handleSubmit} className="space-y-4 p-4 bg-white shadow-md rounded-lg max-w-md mx-auto">
         <input
           type="text"
           name="username"
           value={username}
           onChange={handleChange}
           placeholder="Enter GitHub username"
-          className="form-input"
+          className="w-full px-4 py-2 border rounded-md"
         />
         <input
           type="text"
@@ -49,15 +49,15 @@ const Search = () => {
           value={location}
           onChange={handleChange}
           placeholder="Location"
-          className="form-input"
+          className="w-full px-4 py-2 border rounded-md"
         />
         <input
           type="number"
           placeholder="Min Repositories"
           value={minRepos}
-          className="form-input"
+          className="w-full px-4 py-2 border rounded-md"
         />
-        <button type="submit" className="search-button">
+        <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded-md w-full hover:bg-blue-700">
           Search
         </button>
       </form>
@@ -66,12 +66,12 @@ const Search = () => {
       {error && <p className="error-text">{error}</p>}
 
       {users.length > 0 && (
-        <div className="user-grid">
+        <div>
           {users.map((user) => (
-            <div key={user.id} className="user-card">
-              <img src={user.avatar_url} alt={user.login} width={80} />
-              <h3>{user.login}</h3>
-              <a href={user.html_url} target="_blank" rel="noopener noreferrer">
+            <div key={user.id} className="flex items-center gap-4 border p-4 rounded-md shadow-sm mb-2">
+              <img src={user.avatar_url} alt={user.login} className="w-12 h-12 rounded-full"  />
+              <h3 className="font-semibold">{user.login}</h3>
+              <a href={user.html_url} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
                 View Profile
               </a>
             </div>
