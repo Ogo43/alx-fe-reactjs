@@ -5,7 +5,7 @@ const Home = () => {
   
   return (
     <div>
-        <SearchForm />
+        <Search />
     </div>
   )
 };

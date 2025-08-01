@@ -7,7 +7,7 @@ const useRecipeStore = create((set) => ({
     set((state) => ({
       favorites: [...new Set([...state.favorites, recipeId])], // avoid duplicates
     })),
-    removeFavorite: (recipeId) =>
+  removeFavorite: (recipeId) =>
     set((state) => ({
       favorites: state.favorites.filter((id) => id !== recipeId),
     })),
@@ -15,23 +15,22 @@ const useRecipeStore = create((set) => ({
   recommendations: [],
   generateRecommendations: () =>
     set((state) => {
-          // Mock implementation based on favorites
+      // Mock implementation based on favorites
       const recommended = state.recipes.filter(
-        (recipe) =>
-          state.favorites.includes(recipe.id) && Math.random() > 0.5
+        (recipe) => state.favorites.includes(recipe.id) && Math.random() > 0.5
       );
       return { recommendations: recommended };
     }),
-  
-  searchTerm: '',
+
+  searchTerm: "",
   setSearchTerm: (term) => set({ searchTerm: term }),
   filteredRecipes: [],
-   filterRecipes: () =>
+  filterRecipes: () =>
     set((state) => ({
       filteredRecipes: state.recipes.filter((recipe) => {
-        term: state.searchTerm.toLowerCase();
-        inTitle: recipe.title.toLowerCase().includes(term);
-        inIngredients: recipe.ingredients?.some((ing) =>
+        const term = state.searchTerm.toLowerCase();
+        const inTitle = recipe.title.toLowerCase().includes(term);
+        const inIngredients = recipe.ingredients?.some((ing) =>
           ing.toLowerCase().includes(term)
         );
         return inTitle || inIngredients;
@@ -45,16 +44,16 @@ const useRecipeStore = create((set) => ({
     set((state) => ({
       recipes: state.recipes.filter((recipe) => recipe.id !== id),
     })),
-  updateRecipe: (id) =>
+  updateRecipe: (updatedRecipe) =>
     set((state) => ({
       recipes: [
         ...state.recipes.map((recipe) =>
-          recipe.id === updateRecipe.id
-            ? { ...recipe, ...updateRecipe }
+          recipe.id === updatedRecipe.id
+            ? { ...recipe, ...updatedRecipe }
             : recipe
         ),
       ],
     })),
-}))
+}));
 
 export default useRecipeStore;

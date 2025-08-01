@@ -7,12 +7,19 @@ import axios from "axios";
  */
 
 
-const fetchUserData = async(username) => {
-  const endpoint = `https://api.github.com/users/{username}`;
+const fetchUserData = async({ username, location, minRepos }) => {
+   
+  let query = '';
+
+  if (username) query += `${username} in:login`;
+  if (location) query += `location:${location}`;
+  if (minRepos) query += `repos:>=${minRepos}`;
+
+  const endpoint = `https://api.github.com/search/users?q=${encodeURIComponent(query)}&per_page=10`;
 
   try {
-    const response = await async.get(endpoint);
-    return response.data
+    const response = await axios.get(endpoint);
+    return response.data.items;
   } catch (error) {
     throw new Error(
       error.response?.data?.message || "Failed to fetch user data" //NB: This is used to customize error message
