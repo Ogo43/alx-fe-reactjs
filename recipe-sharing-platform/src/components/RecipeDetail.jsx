@@ -22,14 +22,14 @@ function RecipeDetail() {
       <h2 className="text-xl lg:text-2xl font-medium mb-3 mt-8">Ingredients</h2>
       <ol className="list-decimal list-inside md:text-lg">
         {recipe.ingredients.map((ingredient, index) => (
-            <li key={index} className="">{ingredient}</li>
+            <li key={index} className="max-w-md shadow-2xl">{ingredient}</li>
         ))}
       </ol>
 
       <h4 className="text-xl font-medium mb-3 mt-8">Cooking Steps</h4>
       <ul className="list-disc list-inside md:text-lg">
         {recipe.instructions.map((step, index) => (
-            <li key={index}>{step}</li>
+            <li key={index} className="max-w-3xl shadow-2xl">{step}</li>
         ))}
       </ul>
     </div>
