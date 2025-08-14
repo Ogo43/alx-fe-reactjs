@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 3,
+    "title": "Pasta Carbonara",
+    "summary":"Easy Italian dish made with pasta, eggs, Parmesan cheese, and bacon. Takes about 20 minutes to prepare.",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 4,
+    "title": "Chicken Curry",
+    "summary": "Medium-difficulty dish featuring chicken, curry powder, coconut milk, and onions. Takes about 35 minutes to prepare.",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 5,
+    "title": "Vegetable Stir Fry",
+    "summary": "Quick and healthy stir fry with broccoli, carrots, and bell peppers.",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 6,
+    "title": "Chocolate Brownies",
+    "summary": "Rich and fudgy chocolate brownies perfect for dessert.",
+    "image": "https://via.placeholder.com/150"
+  }
+]

@@ -1,10 +1,11 @@
 import React from 'react'
+import HomePage from './components/HomePage'
 
 function App() {
   return (
     <>
       <div>
-        <h1 className='text-blue-500'>Learning Continue</h1>
+        <HomePage />
       </div>
     </>
   )
