@@ -3,36 +3,87 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/150",
+    "ingredients": ["Spaghetti", "Eggs", "Parmesan Cheese", "Bacon", "Black Pepper", "Salt"],
+    "cookingSteps": [
+      "Boil spaghetti until al dente.",
+      "Fry bacon until crispy.",
+      "Whisk eggs and Parmesan together.",
+      "Drain pasta and mix with bacon.",
+      "Remove from heat and stir in egg mixture.",
+      "Season with black pepper and serve immediately."
+    ]
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/150",
+    "ingredients": ["Chicken", "Yogurt", "Ginger", "Garlic", "Tomato Puree", "Cream", "Spices", "Salt", "Oil"],
+    "cookingSteps": [
+      "Marinate chicken in yogurt and spices for at least 1 hour.",
+      "Grill or bake the chicken until cooked through.",
+      "Prepare the masala gravy with tomato puree, cream, and spices.",
+      "Add cooked chicken to the gravy and simmer for 10 minutes.",
+      "Serve hot with rice or naan."
+    ]
   },
   {
     "id": 3,
     "title": "Pasta Carbonara",
-    "summary":"Easy Italian dish made with pasta, eggs, Parmesan cheese, and bacon. Takes about 20 minutes to prepare.",
-    "image": "https://via.placeholder.com/150"
+    "summary": "Easy Italian dish made with pasta, eggs, Parmesan cheese, and bacon. Takes about 20 minutes to prepare.",
+    "image": "https://via.placeholder.com/150",
+    "ingredients": ["Pasta", "Eggs", "Parmesan Cheese", "Bacon", "Salt", "Black Pepper"],
+    "cookingSteps": [
+      "Cook pasta according to package instructions.",
+      "Cook bacon until crispy and chop into pieces.",
+      "Mix eggs and Parmesan cheese in a bowl.",
+      "Combine pasta and bacon, then stir in egg mixture off the heat.",
+      "Season with salt and black pepper.",
+      "Serve immediately."
+    ]
   },
   {
     "id": 4,
     "title": "Chicken Curry",
     "summary": "Medium-difficulty dish featuring chicken, curry powder, coconut milk, and onions. Takes about 35 minutes to prepare.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/150",
+    "ingredients": ["Chicken", "Curry Powder", "Coconut Milk", "Onions", "Garlic", "Ginger", "Salt", "Oil"],
+    "cookingSteps": [
+      "Sauté onions, garlic, and ginger in oil.",
+      "Add chicken and brown on all sides.",
+      "Stir in curry powder and cook for 2 minutes.",
+      "Add coconut milk and simmer until chicken is fully cooked.",
+      "Season with salt and serve hot with rice."
+    ]
   },
   {
     "id": 5,
     "title": "Vegetable Stir Fry",
     "summary": "Quick and healthy stir fry with broccoli, carrots, and bell peppers.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/150",
+    "ingredients": ["Broccoli", "Carrots", "Bell Peppers", "Soy Sauce", "Garlic", "Oil", "Salt", "Pepper"],
+    "cookingSteps": [
+      "Heat oil in a pan and sauté garlic until fragrant.",
+      "Add vegetables and stir-fry for 5-7 minutes.",
+      "Add soy sauce and cook for another 2 minutes.",
+      "Season with salt and pepper to taste.",
+      "Serve immediately."
+    ]
   },
   {
     "id": 6,
     "title": "Chocolate Brownies",
     "summary": "Rich and fudgy chocolate brownies perfect for dessert.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/150",
+    "ingredients": ["Dark Chocolate", "Butter", "Sugar", "Eggs", "Flour", "Cocoa Powder", "Salt", "Vanilla Extract"],
+    "cookingSteps": [
+      "Preheat oven to 350°F (175°C).",
+      "Melt chocolate and butter together.",
+      "Whisk in sugar and eggs until smooth.",
+      "Fold in flour, cocoa powder, and salt.",
+      "Pour batter into a greased baking pan.",
+      "Bake for 25-30 minutes and let cool before cutting."
+    ]
   }
 ]
