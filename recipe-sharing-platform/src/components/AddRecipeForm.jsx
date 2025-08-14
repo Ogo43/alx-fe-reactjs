@@ -4,7 +4,7 @@ function AddRecipeForm() {
   const [recipeForm, setRecipeForm] = useState({
     title: "",
     ingredients: [],
-    instructions: "",
+    steps: "",
   });
 
   const handleSubmit = (e) => {
@@ -56,9 +56,9 @@ function AddRecipeForm() {
       <div>
         <label className="block font-medium">Instructions</label>
         <textarea
-          value={recipeForm.instructions}
+          value={recipeForm.steps}
           onChange={(e) =>
-            setRecipeForm({ ...recipeForm, instructions: e.target.value })
+            setRecipeForm({ ...recipeForm, stepss: e.target.value })
           }
           className="border p-2 w-full rounded"
         />
