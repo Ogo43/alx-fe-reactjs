@@ -29,6 +29,14 @@ function HomePage() {
         </ul>
         </div>
       )}
+
+      <h1 className="text-2xl font-bold my-6">Fill Recipe Form</h1>
+      <Link
+        to="/add-recipe"
+        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
+      >
+        Add New Recipe
+      </Link>
     </div>
   );
 }
