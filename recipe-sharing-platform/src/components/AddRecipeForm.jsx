@@ -7,16 +7,33 @@ function AddRecipeForm() {
     steps: "",
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const [errors, setErrors] = useState({});
 
-    // Check for at least two ingredients
-    if (recipeForm.ingredients.length < 2) {
-      alert("Please add at least two ingredients.");
-      return;
+  // 👇 Required function for validation
+  const validate = () => {
+    let newErrors = {};
+
+    if (!recipeForm.title.trim()) {
+      newErrors.title = "Title is required";
     }
 
-    console.log("Form submitted:", recipeForm);
+    if (!recipeForm.ingredients.trim()) {
+      newErrors.ingredients = "Ingredients are required";
+    }
+
+    if (!recipeForm.steps.trim()) {
+      newErrors.steps = "Steps are required";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      console.log("Form submitted:", recipeForm);
+    }
 
     setRecipeForm({ title: "", ingredients: [], instructions: "" });
   };
@@ -36,6 +53,7 @@ function AddRecipeForm() {
           }
           className="border p-2 w-full rounded"
         />
+        {errors.title && <p className="text-red-500 text-sm">{errors.title}</p>}
       </div>
 
       <div>
@@ -51,6 +69,9 @@ function AddRecipeForm() {
           }
           className="border p-2 w-full rounded"
         />
+        {errors.ingredients && (
+          <p className="text-red-500 text-sm">{errors.ingredients}</p>
+        )}
       </div>
 
       <div>
@@ -62,6 +83,9 @@ function AddRecipeForm() {
           }
           className="border p-2 w-full rounded"
         />
+        {errors.steps && (
+          <p className="text-red-500 text-sm">{errors.steps}</p>
+        )}
       </div>
 
       <button
