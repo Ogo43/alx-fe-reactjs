@@ -5,7 +5,7 @@
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
     "image": "https://via.placeholder.com/150",
     "ingredients": ["Spaghetti", "Eggs", "Parmesan Cheese", "Bacon", "Black Pepper", "Salt"],
-    "cookingSteps": [
+    "instructions": [
       "Boil spaghetti until al dente.",
       "Fry bacon until crispy.",
       "Whisk eggs and Parmesan together.",
@@ -20,7 +20,7 @@
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
     "image": "https://via.placeholder.com/150",
     "ingredients": ["Chicken", "Yogurt", "Ginger", "Garlic", "Tomato Puree", "Cream", "Spices", "Salt", "Oil"],
-    "cookingSteps": [
+    "instructions": [
       "Marinate chicken in yogurt and spices for at least 1 hour.",
       "Grill or bake the chicken until cooked through.",
       "Prepare the masala gravy with tomato puree, cream, and spices.",
@@ -34,7 +34,7 @@
     "summary": "Easy Italian dish made with pasta, eggs, Parmesan cheese, and bacon. Takes about 20 minutes to prepare.",
     "image": "https://via.placeholder.com/150",
     "ingredients": ["Pasta", "Eggs", "Parmesan Cheese", "Bacon", "Salt", "Black Pepper"],
-    "cookingSteps": [
+    "instructions": [
       "Cook pasta according to package instructions.",
       "Cook bacon until crispy and chop into pieces.",
       "Mix eggs and Parmesan cheese in a bowl.",
@@ -49,7 +49,7 @@
     "summary": "Medium-difficulty dish featuring chicken, curry powder, coconut milk, and onions. Takes about 35 minutes to prepare.",
     "image": "https://via.placeholder.com/150",
     "ingredients": ["Chicken", "Curry Powder", "Coconut Milk", "Onions", "Garlic", "Ginger", "Salt", "Oil"],
-    "cookingSteps": [
+    "instructions": [
       "Sauté onions, garlic, and ginger in oil.",
       "Add chicken and brown on all sides.",
       "Stir in curry powder and cook for 2 minutes.",
@@ -63,7 +63,7 @@
     "summary": "Quick and healthy stir fry with broccoli, carrots, and bell peppers.",
     "image": "https://via.placeholder.com/150",
     "ingredients": ["Broccoli", "Carrots", "Bell Peppers", "Soy Sauce", "Garlic", "Oil", "Salt", "Pepper"],
-    "cookingSteps": [
+    "instructions": [
       "Heat oil in a pan and sauté garlic until fragrant.",
       "Add vegetables and stir-fry for 5-7 minutes.",
       "Add soy sauce and cook for another 2 minutes.",
@@ -77,7 +77,7 @@
     "summary": "Rich and fudgy chocolate brownies perfect for dessert.",
     "image": "https://via.placeholder.com/150",
     "ingredients": ["Dark Chocolate", "Butter", "Sugar", "Eggs", "Flour", "Cocoa Powder", "Salt", "Vanilla Extract"],
-    "cookingSteps": [
+    "instructions": [
       "Preheat oven to 350°F (175°C).",
       "Melt chocolate and butter together.",
       "Whisk in sugar and eggs until smooth.",
