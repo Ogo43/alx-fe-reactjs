@@ -15,7 +15,7 @@ function HomePage() {
         <p className="text-base">No recipe found</p>
       ) : (
         <div className="flex justify-center flex-wrap">
-          <ul className="grid gap-6 sm:grid-cols-1 md:grid-cols-3 mt-2">
+          <ul className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 mt-2">
           {recipes.map((recipe) => (
             <li key={recipe.id} className="max-w-xs shadow-2xl p-5 sm:py-2 md:p-5 text-start rounded-2xl cursor-pointer hover:bg-fuchsia-200 transition-all duration-300 hover:scale-105">
               <img src={recipe.image} alt={recipe.title} className="w-full rounded-lg sm:text-sm" />
