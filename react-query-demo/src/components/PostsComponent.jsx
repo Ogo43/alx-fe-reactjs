@@ -16,6 +16,8 @@ function PostsComponent() {
     queryFn: fetchPosts,
     staleTime: 5000, // Data stays fresh for 5s
     cacheTime: 1000 * 60 * 5, // Cache for 5 minutes
+    refetchOnWindowFocus: true, 
+    keepPreviousData: true,     
   });
 
    // Handle loading state
