@@ -1,51 +1,45 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import TodoList from './TodoList'; // Adjust the path if needed
+import TodoList from './TodoList';
 
-// Test: Component renders correctly
 // eslint-disable-next-line no-undef
-test('renders TodoList component', () => {
-    render(<TodoList />);
-    // Check for input and button
+describe('TodoList Component', () => {
     // eslint-disable-next-line no-undef
-    expect(screen.getByPlaceholderText(/Add a new todo/i)).toBeInTheDocument();
+    test('renders TodoList component', () => {
+        render(<TodoList />);
+        // eslint-disable-next-line no-undef
+        expect(screen.getByPlaceholderText(/Add a new todo/i)).toBeInTheDocument();
+        // eslint-disable-next-line no-undef
+        expect(screen.getByText('Add')).toBeInTheDocument();
+    });
+
     // eslint-disable-next-line no-undef
-    expect(screen.getByText('Add')).toBeInTheDocument();
-});
+    test('adds a new todo when Add button is clicked', () => {
+        render(<TodoList />);
+        const input = screen.getByPlaceholderText(/Add a new todo/i);
+        const addButton = screen.getByText('Add');
 
-// Test: Adds a new todo
-// eslint-disable-next-line no-undef
-test('adds a new todo when Add button is clicked', () => {
-    render(<TodoList />);
-    const input = screen.getByPlaceholderText(/Add a new todo/i);
-    const addButton = screen.getByText('Add');
+        fireEvent.change(input, { target: { value: 'Learn Testing' } });
+        fireEvent.click(addButton);
 
-    // Simulate typing and clicking
-    fireEvent.change(input, { target: { value: 'Learn Testing' } });
-    fireEvent.click(addButton);
+        // eslint-disable-next-line no-undef
+        expect(screen.getByText('Learn Testing')).toBeInTheDocument();
+    });
 
-    // Assert that new todo is in the list
     // eslint-disable-next-line no-undef
-    expect(screen.getByText('Learn Testing')).toBeInTheDocument();
-});
+    test('deletes a todo when Delete button is clicked', () => {
+        render(<TodoList />);
+        const input = screen.getByPlaceholderText(/Add a new todo/i);
+        const addButton = screen.getByText('Add');
 
-// Test: Deletes a todo
-// eslint-disable-next-line no-undef
-test('deletes a todo when Delete button is clicked', () => {
-    render(<TodoList />);
-    const input = screen.getByPlaceholderText(/Add a new todo/i);
-    const addButton = screen.getByText('Add');
+        fireEvent.change(input, { target: { value: 'Learn Jest' } });
+        fireEvent.click(addButton);
 
-    // Add a todo
-    fireEvent.change(input, { target: { value: 'Learn Jest' } });
-    fireEvent.click(addButton);
+        fireEvent.click(screen.getByText('Delete'));
 
-    // Click delete button
-    fireEvent.click(screen.getByText('Delete'));
-
-    // Assert the todo is removed
-    // eslint-disable-next-line no-undef
-    expect(screen.queryByText('Learn Jest')).not.toBeInTheDocument();
+        // eslint-disable-next-line no-undef
+        expect(screen.queryByText('Learn Jest')).not.toBeInTheDocument();
+    });
 });
 
 
