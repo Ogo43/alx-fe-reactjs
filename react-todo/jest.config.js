@@ -1,6 +1,7 @@
 export default {
   testEnvironment: "jsdom",
-  preset: 'vite-jest'
+  transform: { "^.+\\.[jt]sx?$": "babel-jest" },
+  moduleFileExtensions: ["js", "jsx"]
 };
 
 
