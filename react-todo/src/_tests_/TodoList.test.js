@@ -10,17 +10,14 @@ const TestingComponent = () => {
     return <TodoList />;
 };
 
-// Group tests inside describe block for TestingComponent
-
 describe('TestingComponent', () => {
-    // Test: Component renders correctly
-    test('renders TodoList component inside TestingComponent', () => {
+    // This test ensures TestingComponent renders TodoList
+    test('renders TestingComponent', () => {
         render(<TestingComponent />);
         expect(screen.getByPlaceholderText(/Add a new todo/i)).toBeInTheDocument();
         expect(screen.getByText('Add')).toBeInTheDocument();
     });
 
-    // Test: Adds a new todo
     test('adds a new todo when Add button is clicked', () => {
         render(<TestingComponent />);
         const input = screen.getByPlaceholderText(/Add a new todo/i);
@@ -32,7 +29,6 @@ describe('TestingComponent', () => {
         expect(screen.getByText('Learn Testing')).toBeInTheDocument();
     });
 
-    // Test: Deletes a todo
     test('deletes a todo when Delete button is clicked', () => {
         render(<TestingComponent />);
         const input = screen.getByPlaceholderText(/Add a new todo/i);
