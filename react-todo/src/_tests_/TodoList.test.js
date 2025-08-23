@@ -47,3 +47,4 @@ describe('TestingComponent', () => {
     });
 });
 
+export default TestingComponent;
