@@ -6,47 +6,62 @@ import { expect, test } from 'vitest';
 import * as matchers from 'jest-extended';
 expect.extend(matchers);
 
-test('Checks for the implementation of the testing component', () => {
-  render(<TodoList />);
-
-  // Verify input field and Add button exist
-  expect(screen.getByPlaceholderText(/Add a new todo/i)).toBeInTheDocument();
-  expect(screen.getByText(/Add/i)).toBeInTheDocument();
+test('renders TodoList component', () => {
+    render(<TodoList />);
+    // Check for input and button
+    expect(screen.getByPlaceholderText(/Add a new todo/i)).toBeInTheDocument();
+    expect(screen.getByText('Add')).toBeInTheDocument();
 });
 
+// Test: Adds a new todo
 test('adds a new todo when Add button is clicked', () => {
-  render(<TodoList />);
-  const input = screen.getByPlaceholderText(/Add a new todo/i);
-  const addButton = screen.getByText(/Add/i);
+    render(<TodoList />);
+    const input = screen.getByPlaceholderText(/Add a new todo/i);
+    const addButton = screen.getByText('Add');
 
-  fireEvent.change(input, { target: { value: 'Learn Testing' } });
-  fireEvent.click(addButton);
+    // Simulate typing and clicking
+    fireEvent.change(input, { target: { value: 'Learn Testing' } });
+    fireEvent.click(addButton);
 
-  expect(screen.getByText('Learn Testing')).toBeInTheDocument();
+    // Assert that new todo is in the list
+    expect(screen.getByText('Learn Testing')).toBeInTheDocument();
 });
 
-test('toggles a todo when clicked', () => {
-  render(<TodoList />);
-  const input = screen.getByPlaceholderText(/Add a new todo/i);
-  const addButton = screen.getByText(/Add/i);
-
-  fireEvent.change(input, { target: { value: 'Learn React' } });
-  fireEvent.click(addButton);
-
-  const todoItem = screen.getByText('Learn React');
-  fireEvent.click(todoItem);
-
-  expect(todoItem).toHaveClass('completed'); // Make sure your component applies this class
-});
-
+// Test: Deletes a todo
 test('deletes a todo when Delete button is clicked', () => {
-  render(<TodoList />);
-  const input = screen.getByPlaceholderText(/Add a new todo/i);
-  const addButton = screen.getByText(/Add/i);
+    render(<TodoList />);
+    const input = screen.getByPlaceholderText(/Add a new todo/i);
+    const addButton = screen.getByText('Add');
 
-  fireEvent.change(input, { target: { value: 'Learn Jest' } });
-  fireEvent.click(addButton);
-  fireEvent.click(screen.getByText(/Delete/i));
+    // Add a todo
+    fireEvent.change(input, { target: { value: 'Learn Jest' } });
+    fireEvent.click(addButton);
 
-  expect(screen.queryByText('Learn Jest')).not.toBeInTheDocument();
+    // Click delete button
+    fireEvent.click(screen.getByText('Delete'));
+
+    // Assert the todo is removed
+    expect(screen.queryByText('Learn Jest')).not.toBeInTheDocument();
+});
+
+// Test: Toggles a todo as completed when clicked
+test('toggles todo as completed when clicked', () => {
+    render(<TodoList />);
+    const input = screen.getByPlaceholderText(/Add a new todo/i);
+    const addButton = screen.getByText('Add');
+
+    // Add a todo
+    fireEvent.change(input, { target: { value: 'Learn React' } });
+    fireEvent.click(addButton);
+
+    const todoItem = screen.getByText('Learn React');
+
+    // Initially not completed
+    expect(todoItem).not.toHaveClass('completed');
+
+    // Click to toggle
+    fireEvent.click(todoItem);
+
+    // Now it should have 'completed' class
+    expect(todoItem).toHaveClass('completed');
 });
