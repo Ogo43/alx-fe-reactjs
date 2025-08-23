@@ -1,47 +1,49 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import TodoList from '../TodoList';
-import { expect, test } from 'vitest';
+import TodoList from '../components/TodoList';
+import { expect, test, describe } from 'vitest';
 import * as matchers from 'jest-extended';
 expect.extend(matchers);
 
-// Test: Component renders correctly
-test('renders TodoList component', () => {
-    render(<TodoList />);
-    // Check for input and button
-    expect(screen.getByPlaceholderText(/Add a new todo/i)).toBeInTheDocument();
-    expect(screen.getByText('Add')).toBeInTheDocument();
-});
+const TestingComponent = () => {
+    return <TodoList />;
+};
 
-// Test: Adds a new todo
-test('adds a new todo when Add button is clicked', () => {
-    render(<TodoList />);
-    const input = screen.getByPlaceholderText(/Add a new todo/i);
-    const addButton = screen.getByText('Add');
+// Group tests inside describe block for TestingComponent
 
-    // Simulate typing and clicking
-    fireEvent.change(input, { target: { value: 'Learn Testing' } });
-    fireEvent.click(addButton);
+describe('TestingComponent', () => {
+    // Test: Component renders correctly
+    test('renders TodoList component inside TestingComponent', () => {
+        render(<TestingComponent />);
+        expect(screen.getByPlaceholderText(/Add a new todo/i)).toBeInTheDocument();
+        expect(screen.getByText('Add')).toBeInTheDocument();
+    });
 
-    // Assert that new todo is in the list
-    expect(screen.getByText('Learn Testing')).toBeInTheDocument();
-});
+    // Test: Adds a new todo
+    test('adds a new todo when Add button is clicked', () => {
+        render(<TestingComponent />);
+        const input = screen.getByPlaceholderText(/Add a new todo/i);
+        const addButton = screen.getByText('Add');
 
-// Test: Deletes a todo
-test('deletes a todo when Delete button is clicked', () => {
-    render(<TodoList />);
-    const input = screen.getByPlaceholderText(/Add a new todo/i);
-    const addButton = screen.getByText('Add');
+        fireEvent.change(input, { target: { value: 'Learn Testing' } });
+        fireEvent.click(addButton);
 
-    // Add a todo
-    fireEvent.change(input, { target: { value: 'Learn Jest' } });
-    fireEvent.click(addButton);
+        expect(screen.getByText('Learn Testing')).toBeInTheDocument();
+    });
 
-    // Click delete button
-    fireEvent.click(screen.getByText('Delete'));
+    // Test: Deletes a todo
+    test('deletes a todo when Delete button is clicked', () => {
+        render(<TestingComponent />);
+        const input = screen.getByPlaceholderText(/Add a new todo/i);
+        const addButton = screen.getByText('Add');
 
-    // Assert the todo is removed
-    expect(screen.queryByText('Learn Jest')).not.toBeInTheDocument();
+        fireEvent.change(input, { target: { value: 'Learn Jest' } });
+        fireEvent.click(addButton);
+
+        fireEvent.click(screen.getByText('Delete'));
+
+        expect(screen.queryByText('Learn Jest')).not.toBeInTheDocument();
+    });
 });
 
